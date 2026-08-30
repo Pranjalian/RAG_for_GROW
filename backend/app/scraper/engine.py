@@ -101,14 +101,20 @@ class ResilientScraper:
                 logger.debug(f"[{attempt}/{max_retries+1}] Fetching {url}")
                 
                 # Navigate and wait for network idle to ensure JS framework finishes rendering
-                response = await page.goto(
-                    url, 
-                    timeout=timeout, 
-                    wait_until="domcontentloaded"
-                )
-                
-                if response and not response.ok:
-                    raise PlaywrightError(f"HTTP {response.status} - {response.status_text}")
+                try:
+                    response = await page.goto(
+                        url, 
+                        timeout=timeout, 
+                        wait_until="domcontentloaded"
+                    )
+                    
+                    if response and not response.ok:
+                        raise PlaywrightError(f"HTTP {response.status} - {response.status_text}")
+                except Exception as e:
+                    if "Timeout" in str(e):
+                        logger.warning(f"Timeout on goto for {url}, attempting to extract content anyway.")
+                    else:
+                        raise
                 
                 # Wait briefly for any late-stage DOM mutations (e.g. React hydration)
                 await page.wait_for_timeout(2000)
