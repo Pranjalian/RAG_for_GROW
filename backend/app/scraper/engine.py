@@ -104,7 +104,7 @@ class ResilientScraper:
                 response = await page.goto(
                     url, 
                     timeout=timeout, 
-                    wait_until="load"
+                    wait_until="domcontentloaded"
                 )
                 
                 if response and not response.ok:
