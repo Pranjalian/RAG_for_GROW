@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Groww Market Intelligence - Watchlist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#303445",
+                    "on-primary-container": "#00533c",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#bacac1",
+                    "secondary": "#c3c6d8",
+                    "on-tertiary-fixed": "#301400",
+                    "on-error": "#690005",
+                    "inverse-primary": "#006c4f",
+                    "surface-container-high": "#25293a",
+                    "on-primary-fixed-variant": "#00513b",
+                    "on-secondary": "#2c303e",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "inverse-on-surface": "#2b3040",
+                    "outline-variant": "#3c4a43",
+                    "surface": "#0e1322",
+                    "primary-fixed": "#59fdc5",
+                    "surface-container-lowest": "#090d1d",
+                    "inverse-surface": "#dee1f7",
+                    "primary": "#44edb7",
+                    "secondary-fixed": "#dfe1f5",
+                    "on-secondary-fixed-variant": "#424655",
+                    "primary-fixed-dim": "#2fe0aa",
+                    "surface-dim": "#0e1322",
+                    "secondary-container": "#454958",
+                    "tertiary": "#ffc8a3",
+                    "on-tertiary": "#502500",
+                    "surface-container-low": "#161b2b",
+                    "on-background": "#dee1f7",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#303445",
+                    "surface-tint": "#2fe0aa",
+                    "outline": "#85948c",
+                    "tertiary-fixed-dim": "#ffb785",
+                    "background": "#0e1322",
+                    "tertiary-fixed": "#ffdcc6",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#733800",
+                    "surface-bright": "#343949",
+                    "on-secondary-container": "#b4b7ca",
+                    "surface-container": "#1a1f2f",
+                    "secondary-fixed-dim": "#c3c6d8",
+                    "primary-container": "#00d09c",
+                    "on-primary-fixed": "#002116",
+                    "tertiary-container": "#ffa15b",
+                    "on-surface": "#dee1f7",
+                    "on-primary": "#003828",
+                    "on-secondary-fixed": "#171b29"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "20px",
+                    "container-max": "1440px",
+                    "md": "16px",
+                    "xl": "40px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "label-mono": ["JetBrains Mono"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "title-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "title-md": ["18px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body { background-color: #0e1322; color: #dee1f7; }
+        /* Custom scrollbar for data tables */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #303445; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #454958; }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-surface text-on-surface antialiased overflow-x-hidden">
+<!-- Source-Only Mode Banner -->
+<div class="fixed top-0 w-full z-[60] flex items-center justify-center h-8 bg-secondary-container dark:bg-secondary-container none">
+<span class="font-label-mono text-label-mono uppercase tracking-widest text-on-secondary-container dark:text-on-secondary-container">
+            🔒 Groww Source-Only Mode
+        </span>
+</div>
+<!-- TopAppBar -->
+<nav class="fixed w-full z-50 flex items-center justify-between px-lg h-16 bg-surface dark:bg-surface border-b border-white/5 bg-surface/80 backdrop-blur-md" style="top: 32px;">
+<div class="flex items-center gap-md">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">
+                Groww Market Intelligence
+            </span>
+</div>
+<div class="hidden md:flex items-center h-full gap-xl font-title-md text-title-md">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 h-full flex items-center" href="#">Chat</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 h-full flex items-center" href="#">Compare</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 h-full flex items-center" href="#">NFO</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 h-full flex items-center" href="#">News</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 h-full flex items-center opacity-80 scale-95 transition-all relative top-[1px]" href="#">Watchlist</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 p-sm rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-white/10">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A hyper-realistic minimalist profile avatar placeholder for a high-end financial application. The avatar features abstract geometric shapes in deep dark blue and vibrant neon green on a matte dark background, adhering to a sophisticated dark-mode UI aesthetic. It conveys professional trust and anonymity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfBWJ-f14ARnkcqaTDmW1xKBYtjZZHElpotyhZmuEoeBdAz0rHyONn855Qyx2L4INCoZ5ftAwPYpehxB8BIodRcU6H2-nDEIO6_KaZ0-aSQmPP7ZYqdQU_qGF56X3nlWrhHliI9Drrz7RvkpRfsSLrzyfqhGIPMeZ9_gnsQiyEY4UaBmktZOOXd4iKUx55rf7BEYMKwgOGDPtmZDo_sRmgu6srNeipL2RpEKEc6l-tQpmDc0nZsPuRag"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col fixed left-0 h-full w-[240px] py-md bg-surface-container-low dark:bg-surface-container-low border-r border-white/5 z-40" style="top: 96px; height: calc(100vh - 96px);">
+<div class="px-md mb-lg">
+<div class="flex items-center gap-sm mb-xs">
+<img alt="Market Health Indicator" class="w-6 h-6 rounded border border-white/10" data-alt="A small, crisp health indicator icon showing an abstract representation of server health or market connectivity. Rendered in bright, luminous green on a dark minimalist background, suitable for a precision modernism dashboard sidebar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhhqv769xf9clWHRV2vLY3FsIBAaEtpdF-jszyfx1eUtoO0baeMawTn83gUnQNFtEq4O8WImXAu7tXAjRyM1YGr4JJDkJ_84dM53YNrq_pY_5l-CagduMnGAPCVHFWeABZ4NENoGZ0530qeUZThdLt9ikn224sTkLwcqdPX1Ax5YbhrdK-kRnLBCZvfukm8qj8og3mugUFnwm0CqgN9AtqbZNVwg3kp0qIZzeGbG0jg4haykcoSsDejg"/>
+<h3 class="font-headline-sm text-headline-sm font-black text-primary">System Status</h3>
+</div>
+<p class="font-caption text-caption text-on-surface-variant ml-8">All Systems Live</p>
+</div>
+<nav class="flex-1 flex flex-col gap-sm mt-md font-body-md text-body-md">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-primary-container bg-primary-container rounded-lg mx-2 scale-[0.98] transition-transform font-medium" href="#">
+<span class="material-symbols-outlined">show_chart</span>
+                Markets
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+                Portfolio
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+                Reports
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-md mt-auto mb-lg w-full">
+<button class="w-full py-sm bg-surface-container border border-primary/20 text-primary rounded-lg font-title-md text-title-md hover:bg-primary hover:text-on-primary transition-all duration-300">
+                Premium Insights
+            </button>
+</div>
+<div class="mt-auto border-t border-white/5 pt-md">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+                Help
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Sign Out
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:ml-[240px] pt-[120px] px-md lg:px-lg pb-xl min-h-screen">
+<div class="max-w-[1440px] mx-auto">
+<!-- WebSocket Error Banner (Demonstration) -->
+<div class="mb-lg w-full bg-error-container/20 border border-error/40 rounded-lg p-md flex items-start sm:items-center justify-between gap-md backdrop-blur-sm shadow-[0_0_15px_rgba(147,0,10,0.1)]">
+<div class="flex items-center gap-md text-error">
+<span class="material-symbols-outlined">cloud_off</span>
+<div>
+<h4 class="font-title-md text-title-md font-medium text-error">Live Data Feed Disconnected</h4>
+<p class="font-body-md text-body-md text-error/80 mt-1">WebSocket connection lost. Displaying cached data from last successful sync (14:32 IST).</p>
+</div>
+</div>
+<button class="shrink-0 px-4 py-2 bg-error-container text-on-error-container rounded-lg font-title-md text-title-md hover:bg-error hover:text-on-error transition-colors whitespace-nowrap">
+                    Re-connect
+                </button>
+</div>
+<!-- Page Header -->
+<header class="flex flex-col sm:flex-row sm:items-end justify-between gap-md mb-xl">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight">Watchlist</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">Monitor saved funds, track intra-day volatility, and review historical shifts.</p>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-sm px-4 py-2 bg-surface-container-high border border-white/10 rounded-lg text-on-surface hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span class="font-title-md text-title-md">Filter</span>
+</button>
+<button class="flex items-center gap-sm px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-title-md text-title-md font-medium hover:bg-primary transition-colors shadow-[0_0_20px_rgba(0,208,156,0.15)]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Entity
+                    </button>
+</div>
+</header>
+<!-- Active Watchlist Section ('What Changed') -->
+<section class="mb-xl">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+                    High Priority Funds
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- Card 1: Positive Shift -->
+<div class="bg-surface-container rounded-xl border border-white/5 p-lg hover:border-white/10 transition-colors relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-container-high rounded text-label-mono font-label-mono text-on-surface-variant mb-2">EQUITY MULTI-CAP</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold leading-tight">Parag Parikh Flexi Cap Fund Direct-Growth</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="mt-xl">
+<div class="flex items-baseline gap-sm mb-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">₹74.82</span>
+<div class="flex items-center gap-xs px-2 py-0.5 bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-primary">arrow_upward</span>
+<span class="font-label-mono text-label-mono text-primary font-bold">+1.24%</span>
+</div>
+</div>
+<!-- What Changed Micro-component -->
+<div class="flex items-center gap-sm mt-md pt-sm border-t border-white/5 font-caption text-caption">
+<span class="text-on-surface-variant">NAV Change:</span>
+<div class="flex items-center bg-surface-container-high rounded px-2 py-1 gap-sm">
+<span class="text-on-surface-variant line-through decoration-error/50">₹73.90</span>
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant">arrow_right_alt</span>
+<span class="text-primary font-medium">₹74.82</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Negative Shift -->
+<div class="bg-surface-container rounded-xl border border-white/5 p-lg hover:border-white/10 transition-colors relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-error/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none group-hover:bg-error/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-container-high rounded text-label-mono font-label-mono text-on-surface-variant mb-2">EQUITY SMALL-CAP</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold leading-tight">Quant Small Cap Fund Direct-Growth</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="mt-xl">
+<div class="flex items-baseline gap-sm mb-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">₹241.15</span>
+<div class="flex items-center gap-xs px-2 py-0.5 bg-error/10 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-error">arrow_downward</span>
+<span class="font-label-mono text-label-mono text-error font-bold">-0.85%</span>
+</div>
+</div>
+<!-- What Changed Micro-component -->
+<div class="flex items-center gap-sm mt-md pt-sm border-t border-white/5 font-caption text-caption">
+<span class="text-on-surface-variant">NAV Change:</span>
+<div class="flex items-center bg-surface-container-high rounded px-2 py-1 gap-sm">
+<span class="text-on-surface-variant line-through decoration-primary/50">₹243.22</span>
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant">arrow_right_alt</span>
+<span class="text-error font-medium">₹241.15</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Neutral/Stagnant -->
+<div class="bg-surface-container rounded-xl border border-white/5 p-lg hover:border-white/10 transition-colors relative overflow-hidden">
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-container-high rounded text-label-mono font-label-mono text-on-surface-variant mb-2">INDEX FUND</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold leading-tight">UTI Nifty 50 Index Fund Direct-Growth</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="mt-xl">
+<div class="flex items-baseline gap-sm mb-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">₹158.40</span>
+<div class="flex items-center gap-xs px-2 py-0.5 bg-surface-container-highest rounded-full border border-white/5">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">remove</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant font-bold">0.00%</span>
+</div>
+</div>
+<div class="flex items-center gap-sm mt-md pt-sm border-t border-white/5 font-caption text-caption">
+<span class="text-on-surface-variant">NAV Change:</span>
+<div class="flex items-center bg-surface-container-high rounded px-2 py-1 gap-sm">
+<span class="text-on-surface-variant">Unchanged since yesterday</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Empty State Section -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary-container">rocket_launch</span>
+                    Emerging Tech ETFs
+                </h2>
+<div class="w-full bg-surface-container border border-white/5 border-dashed rounded-xl p-xl flex flex-col items-center justify-center text-center min-h-[400px]">
+<div class="w-64 h-64 mb-lg relative">
+<!-- Generative Image Placeholder for Empty State -->
+<div class="w-full h-full bg-cover bg-center bg-no-repeat opacity-80 mix-blend-screen" data-alt="A highly detailed, visually striking minimalist 3D illustration of an empty wireframe folder or glowing holographic chart hovering in a dark, void-like space. The design follows a strict dark mode aesthetic with deep #0e1322 blacks, subtly illuminated by soft, ambient neon green and crisp white rim lights. It conveys a sophisticated, high-tech, yet approachable 'empty state' for a professional financial platform." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAohf1xGg4C1PlDsf4MuQzRtBiTfw0PlVZuWC099gv5lhP3-VjKAQeuBvPLdoqapZuDpXPb_braNmklYjOVvlrkX8lNqAF-zmW5tpPOEBbiPDVeUtDjI4NlxM6behsQy2VvEZ3tjAhZJnna3Q3oCQgoyYmtX_7Ksj88QZ7nGNLux84rIWY5nteh0WRw4cqIyyXehCLOeAmswP_FOykNt73q2n7Jmn7h_CX-VunI4Akk_PrPWUMY6yhvbg')"></div>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-semibold mb-sm">No funds saved in this category yet</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-lg">
+                        Build your personalized intelligence dashboard by tracking high-conviction ETFs, thematic funds, and emerging sectors.
+                    </p>
+<button class="flex items-center gap-sm px-6 py-3 bg-surface-container-highest border border-white/10 rounded-lg text-on-surface font-title-md text-title-md hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined">search</span>
+                        Explore Top Performers
+                    </button>
+</div>
+</section>
+</div>
+</main>
+</body></html>

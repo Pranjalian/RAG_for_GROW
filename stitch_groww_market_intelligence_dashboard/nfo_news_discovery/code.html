@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NFO &amp; News - Groww Market Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#303445",
+                        "on-primary-container": "#00533c",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#bacac1",
+                        "secondary": "#c3c6d8",
+                        "on-tertiary-fixed": "#301400",
+                        "on-error": "#690005",
+                        "inverse-primary": "#006c4f",
+                        "surface-container-high": "#25293a",
+                        "on-primary-fixed-variant": "#00513b",
+                        "on-secondary": "#2c303e",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "inverse-on-surface": "#2b3040",
+                        "outline-variant": "#3c4a43",
+                        "surface": "#0e1322",
+                        "primary-fixed": "#59fdc5",
+                        "surface-container-lowest": "#090d1d",
+                        "inverse-surface": "#dee1f7",
+                        "primary": "#44edb7",
+                        "secondary-fixed": "#dfe1f5",
+                        "on-secondary-fixed-variant": "#424655",
+                        "primary-fixed-dim": "#2fe0aa",
+                        "surface-dim": "#0e1322",
+                        "secondary-container": "#454958",
+                        "tertiary": "#ffc8a3",
+                        "on-tertiary": "#502500",
+                        "surface-container-low": "#161b2b",
+                        "on-background": "#dee1f7",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#303445",
+                        "surface-tint": "#2fe0aa",
+                        "outline": "#85948c",
+                        "tertiary-fixed-dim": "#ffb785",
+                        "background": "#0e1322",
+                        "tertiary-fixed": "#ffdcc6",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#733800",
+                        "surface-bright": "#343949",
+                        "on-secondary-container": "#b4b7ca",
+                        "surface-container": "#1a1f2f",
+                        "secondary-fixed-dim": "#c3c6d8",
+                        "primary-container": "#00d09c",
+                        "on-primary-fixed": "#002116",
+                        "tertiary-container": "#ffa15b",
+                        "on-surface": "#dee1f7",
+                        "on-primary": "#003828",
+                        "on-secondary-fixed": "#171b29"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "container-max": "1440px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "title-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Pulse Animation for Data Fetching */
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(0.98); }
+        }
+        .animate-subtle-pulse {
+            animation: subtlePulse 2s ease-in-out infinite;
+        }
+        
+        /* Premium Card Hover Effect */
+        .glass-card {
+            background-color: #1a1d28; /* surface-container */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(68, 237, 183, 0.3); /* primary */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #303445; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #454958; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Small (Source-Only Mode Banner) -->
+<div class="fixed top-0 w-full z-[60] flex items-center justify-center h-8 bg-secondary-container text-on-secondary-container">
+<span class="font-label-mono text-label-mono uppercase tracking-widest text-on-secondary-container cursor-default">
+            🔒 Groww Source-Only Mode
+        </span>
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-8 w-full z-50 flex items-center justify-between px-lg h-16 bg-surface/80 backdrop-blur-md border-b border-white/5">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">Groww Market Intelligence</span>
+</div>
+<!-- Web Navigation Links -->
+<nav class="hidden md:flex items-center gap-6 h-full pt-1">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Chat</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Compare</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 h-full flex items-center" href="#">NFO</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">News</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Watchlist</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-white/10 bg-surface-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, minimalist metallic user avatar icon with subtle green glowing accents in a dark studio setting. The lighting is moody and focused, emphasizing the precise geometry of the shape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWpXMCmYN5voG8WqG9CjgMKXP0ZnOmNMnr3_4ClbrhqRdrp-8tVz8VH3fN9phkImzw6VlJU8SebzjTpteXnyc4aEX75ZK7lfvCaDC4oo9NwxojphgZc_EIFveBaFJyXZhfORjBALeszRobG6zvozxjQRRUS9AVkQ3v38AyXhNSRExrb3xWJDR41N8OqC3Vdy4f4UFKeCr4snM35Nvf5Vr2cuIQI2igQO-cCJgMfGr5Htbw0g0nMuw-gw"/>
+</div>
+</div>
+</header>
+<div class="flex pt-24 min-h-screen">
+<!-- SideNavBar -->
+<nav class="hidden lg:flex flex-col fixed left-0 top-24 h-[calc(100vh-96px)] w-[240px] py-md bg-surface-container-low border-r border-white/5 z-40">
+<!-- Header -->
+<div class="px-md mb-lg">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full border border-primary/20 p-1 flex items-center justify-center bg-surface">
+<div class="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">System Status</h2>
+<p class="font-caption text-caption text-primary">All Systems Live</p>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">show_chart</span> Markets
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span> Portfolio
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">description</span> Reports
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+                </a>
+</div>
+<!-- Footer & CTA -->
+<div class="px-md mt-auto space-y-4">
+<button class="w-full py-2 bg-primary/10 text-primary font-title-md text-title-md rounded-lg border border-primary/20 hover:bg-primary/20 transition-colors">
+                    Premium Insights
+                </button>
+<div class="border-t border-white/5 pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">help</span> Help
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">logout</span> Sign Out
+                    </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-[240px] p-lg max-w-[1440px] mx-auto w-full">
+<!-- Page Header & Tab Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-lg gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Discovery Hub</h1>
+<p class="text-on-surface-variant font-body-md">Real-time intelligence on New Fund Offers and Market Events.</p>
+</div>
+<!-- Tab Toggles (Visual representation for layout, functionality handled by hypothetical JS) -->
+<div class="flex bg-surface-container-high rounded-lg p-1 border border-white/5 inline-flex">
+<button class="px-6 py-2 rounded bg-surface-variant text-on-surface font-title-md text-title-md shadow-sm border border-white/5">NFO Watch</button>
+<button class="px-6 py-2 rounded text-on-surface-variant hover:text-on-surface font-title-md text-title-md transition-colors">Market News</button>
+</div>
+</div>
+<!-- Content Grid (Bento Style) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Left Column: NFO List (Span 8) -->
+<div class="xl:col-span-8 space-y-md">
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-lg border border-white/5 mb-4">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">campaign</span> 
+                            Active &amp; Upcoming NFOs
+                        </h2>
+<span class="text-xs font-label-mono text-on-surface-variant flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div> Live Sync
+                        </span>
+</div>
+<!-- NFO Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- NFO Card 1 -->
+<article class="glass-card rounded-xl p-md flex flex-col relative overflow-hidden group">
+<!-- Subtle Background pattern -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-label-mono bg-primary/10 text-primary border border-primary/20 mb-2">OPEN</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-label-mono bg-tertiary/10 text-tertiary border border-tertiary/20 ml-2 animate-subtle-pulse">NEW</span>
+</div>
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1 relative z-10 group-hover:text-primary transition-colors">HDFC Defence Fund</h3>
+<p class="text-on-surface-variant font-caption text-caption mb-4 relative z-10">Thematic - Sectoral</p>
+<div class="grid grid-cols-2 gap-4 mt-auto border-t border-white/5 pt-4 relative z-10">
+<div>
+<p class="text-on-surface-variant font-caption text-caption mb-1">Opens</p>
+<p class="font-body-md text-on-surface">Oct 24, 2023</p>
+</div>
+<div>
+<p class="text-on-surface-variant font-caption text-caption mb-1">Closes</p>
+<p class="font-body-md text-on-surface">Nov 07, 2023</p>
+</div>
+</div>
+</article>
+<!-- NFO Card 2 -->
+<article class="glass-card rounded-xl p-md flex flex-col relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-label-mono bg-surface-variant text-on-surface-variant border border-white/10 mb-2">UPCOMING</span>
+</div>
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-on-surface-variant">trending_up</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1 relative z-10 group-hover:text-primary transition-colors">SBI Multi Asset Allocation</h3>
+<p class="text-on-surface-variant font-caption text-caption mb-4 relative z-10">Hybrid - Multi Asset</p>
+<div class="grid grid-cols-2 gap-4 mt-auto border-t border-white/5 pt-4 relative z-10">
+<div>
+<p class="text-on-surface-variant font-caption text-caption mb-1">Opens</p>
+<p class="font-body-md text-on-surface">Nov 15, 2023</p>
+</div>
+<div>
+<p class="text-on-surface-variant font-caption text-caption mb-1">Closes</p>
+<p class="font-body-md text-on-surface">Nov 29, 2023</p>
+</div>
+</div>
+</article>
+<!-- NFO Card 3 -->
+<article class="glass-card rounded-xl p-md flex flex-col relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-label-mono bg-primary/10 text-primary border border-primary/20 mb-2">OPEN</span>
+</div>
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-on-surface-variant">pie_chart</span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1 relative z-10 group-hover:text-primary transition-colors">ICICI Pru Smallcap Index</h3>
+<p class="text-on-surface-variant font-caption text-caption mb-4 relative z-10">Equity - Index Fund</p>
+<div class="grid grid-cols-2 gap-4 mt-auto border-t border-white/5 pt-4 relative z-10">
+<div>
+<p class="text-on-surface-variant font-caption text-caption mb-1">Opens</p>
+<p class="font-body-md text-on-surface">Oct 20, 2023</p>
+</div>
+<div>
+<p class="text-on-surface-variant font-caption text-caption mb-1">Closes</p>
+<p class="font-body-md text-on-surface">Nov 03, 2023</p>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Right Column: News Stream (Span 4) -->
+<aside class="xl:col-span-4 flex flex-col h-[calc(100vh-200px)]">
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-lg border border-white/5 mb-4 sticky top-0 z-10 backdrop-blur-md">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">bolt</span> 
+                            Market Flash
+                        </h2>
+</div>
+<!-- News List container with scroll -->
+<div class="flex-1 overflow-y-auto pr-2 space-y-4">
+<!-- News Item 1 -->
+<div class="glass-card rounded-lg p-4 group cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-label-mono text-tertiary bg-tertiary/10 px-1.5 py-0.5 rounded border border-tertiary/20">NEW</span>
+<span class="text-on-surface-variant font-caption text-caption">2 mins ago</span>
+</div>
+<h4 class="font-title-md text-on-surface mb-2 group-hover:text-primary transition-colors leading-snug">RBI MPC keeps repo rate unchanged at 6.5% for fourth consecutive time</h4>
+<p class="text-on-surface-variant font-caption text-caption line-clamp-2">The Monetary Policy Committee (MPC) unanimously decided to keep the repo rate unchanged, prioritizing inflation control while monitoring global economic headwinds.</p>
+</div>
+<!-- News Item 2 -->
+<div class="glass-card rounded-lg p-4 group cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-label-mono text-primary bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">EARNINGS</span>
+<span class="text-on-surface-variant font-caption text-caption">15 mins ago</span>
+</div>
+<h4 class="font-title-md text-on-surface mb-2 group-hover:text-primary transition-colors leading-snug">TCS Q2 Results: Net profit rises 8.7% YoY, misses street estimates slightly</h4>
+<p class="text-on-surface-variant font-caption text-caption line-clamp-2">India's largest IT services firm reported a consolidated net profit of ₹11,342 crore for the quarter ended September 2023, declaring an interim dividend of ₹9 per share.</p>
+</div>
+<!-- News Item 3 -->
+<div class="glass-card rounded-lg p-4 group cursor-pointer opacity-80 hover:opacity-100">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-label-mono text-on-surface-variant bg-surface-variant px-1.5 py-0.5 rounded border border-white/10">MACRO</span>
+<span class="text-on-surface-variant font-caption text-caption">1 hr ago</span>
+</div>
+<h4 class="font-title-md text-on-surface mb-2 group-hover:text-primary transition-colors leading-snug">US Bond yields hit 16-year high, pressuring emerging market equities</h4>
+<p class="text-on-surface-variant font-caption text-caption line-clamp-2">Treasury yields continued their relentless march upward as resilient economic data reinforced the 'higher for longer' narrative for interest rates.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

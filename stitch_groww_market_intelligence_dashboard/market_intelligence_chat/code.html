@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Groww Market Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#303445",
+                      "on-primary-container": "#00533c",
+                      "on-error-container": "#ffdad6",
+                      "on-surface-variant": "#bacac1",
+                      "secondary": "#c3c6d8",
+                      "on-tertiary-fixed": "#301400",
+                      "on-error": "#690005",
+                      "inverse-primary": "#006c4f",
+                      "surface-container-high": "#25293a",
+                      "on-primary-fixed-variant": "#00513b",
+                      "on-secondary": "#2c303e",
+                      "on-tertiary-fixed-variant": "#713700",
+                      "inverse-on-surface": "#2b3040",
+                      "outline-variant": "#3c4a43",
+                      "surface": "#0e1322",
+                      "primary-fixed": "#59fdc5",
+                      "surface-container-lowest": "#090d1d",
+                      "inverse-surface": "#dee1f7",
+                      "primary": "#44edb7",
+                      "secondary-fixed": "#dfe1f5",
+                      "on-secondary-fixed-variant": "#424655",
+                      "primary-fixed-dim": "#2fe0aa",
+                      "surface-dim": "#0e1322",
+                      "secondary-container": "#454958",
+                      "tertiary": "#ffc8a3",
+                      "on-tertiary": "#502500",
+                      "surface-container-low": "#161b2b",
+                      "on-background": "#dee1f7",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#303445",
+                      "surface-tint": "#2fe0aa",
+                      "outline": "#85948c",
+                      "tertiary-fixed-dim": "#ffb785",
+                      "background": "#0e1322",
+                      "tertiary-fixed": "#ffdcc6",
+                      "error-container": "#93000a",
+                      "on-tertiary-container": "#733800",
+                      "surface-bright": "#343949",
+                      "on-secondary-container": "#b4b7ca",
+                      "surface-container": "#1a1f2f",
+                      "secondary-fixed-dim": "#c3c6d8",
+                      "primary-container": "#00d09c",
+                      "on-primary-fixed": "#002116",
+                      "tertiary-container": "#ffa15b",
+                      "on-surface": "#dee1f7",
+                      "on-primary": "#003828",
+                      "on-secondary-fixed": "#171b29"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "20px",
+                      "container-max": "1440px",
+                      "md": "16px",
+                      "xl": "40px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "label-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "caption": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-mono": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "title-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(36, 40, 54, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .card-level-1 {
+            background-color: #1a1d28;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .card-level-2 {
+            background-color: #242836;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sparkline-gradient {
+            background: linear-gradient(180deg, rgba(68, 237, 183, 0.2) 0%, rgba(68, 237, 183, 0) 100%);
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md text-body-md overflow-hidden">
+<!-- Source-Only Banner (TopAppBar small) -->
+<div class="fixed top-0 w-full z-[60] flex items-center justify-center h-8 bg-secondary-container dark:bg-secondary-container text-on-secondary-container dark:text-on-secondary-container font-label-mono text-label-mono uppercase tracking-widest cursor-default">
+        🔒 Groww Source-Only Mode
+    </div>
+<!-- Main Header (TopAppBar center-aligned) -->
+<header class="fixed top-8 w-full z-50 flex items-center justify-between px-lg h-16 border-b border-white/5 bg-surface/80 backdrop-blur-md">
+<div class="flex items-center gap-md">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary">Groww Market Intelligence</h1>
+<div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-mono text-label-mono text-primary-container">All sources healthy</span>
+</div>
+</div>
+<!-- Web Nav Cluster -->
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-title-md text-title-md opacity-80 scale-95 transition-all" href="#">Chat</a>
+<a class="text-on-surface-variant font-medium font-title-md text-title-md hover:text-primary transition-colors duration-200" href="#">Compare</a>
+<a class="text-on-surface-variant font-medium font-title-md text-title-md hover:text-primary transition-colors duration-200" href="#">NFO</a>
+<a class="text-on-surface-variant font-medium font-title-md text-title-md hover:text-primary transition-colors duration-200" href="#">News</a>
+<a class="text-on-surface-variant font-medium font-title-md text-title-md hover:text-primary transition-colors duration-200" href="#">Watchlist</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full border border-white/10 object-cover" data-alt="A small, circular avatar portrait of a professional trader in a dark, high-end environment, illuminated by the glow of multi-monitor setups." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxapk40DR_N6C8d38fX032G_NAPMYI2940u2TLrz6Qw9uKNOveTcr57j6OdEqzDWr40QzpQyA6uVQhlFJxb1Mk2CEj8vFz_-3clNsES8PjylzE8-rkIUOuar6hYlvVvJnlUTxA4tAj20wyuOVbnWMrLhaFv36KxtUbiO1f-ux6t4Q9kaSQaOWoRfnePxtxiOusnohl2EyFmEk3nejg44IaEaDxrMCIAlvlQouiMs_ks6is_m7x2pa7gA"/>
+</div>
+</header>
+<div class="flex flex-1 pt-24 h-screen">
+<!-- SideNav (hidden md, visible lg) -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-24 h-[calc(100vh-96px)] w-[240px] py-md border-r border-white/5 bg-surface-container-low dark:bg-surface-container-low z-40">
+<div class="px-md mb-xl flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-primary">monitor_heart</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">System Status</h2>
+<p class="font-caption text-caption text-primary">All Systems Live</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">show_chart</span>
+<span>Markets</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span>Portfolio</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-1">
+<button class="mx-2 mb-4 bg-primary-container text-black font-title-md text-title-md py-2 rounded-lg hover:opacity-90 transition-opacity">
+                     Premium Insights
+                 </button>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-white/5 mx-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Chat Area -->
+<main class="flex-1 flex flex-col lg:ml-[240px] relative">
+<!-- Chat Scroll Area -->
+<div class="flex-1 overflow-y-auto p-lg flex flex-col gap-xl pb-[120px]">
+<!-- Date Separator -->
+<div class="flex justify-center w-full">
+<span class="font-label-mono text-label-mono text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border border-white/5">Today, 09:41 AM</span>
+</div>
+<!-- User Message -->
+<div class="flex justify-end w-full">
+<div class="max-w-[80%] md:max-w-[60%] flex flex-col items-end gap-2">
+<div class="card-level-2 px-lg py-md rounded-2xl rounded-tr-sm text-on-surface">
+                            Compare Parag Parikh Flexi Cap and HDFC Flexi Cap funds. Focus on recent NAV trends and sector allocation.
+                        </div>
+</div>
+</div>
+<!-- Assistant Message (With Component) -->
+<div class="flex justify-start w-full">
+<div class="max-w-[95%] md:max-w-[80%] flex gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0 border border-primary-container/30 mt-2">
+<span class="material-symbols-outlined text-primary text-sm">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="card-level-1 px-lg py-md rounded-2xl rounded-tl-sm text-on-surface flex flex-col gap-md">
+<p>Here is a detailed comparison between Parag Parikh Flexi Cap Fund and HDFC Flexi Cap Fund based on the latest available market data.</p>
+<!-- Bento Grid Comparison Table -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+<!-- Fund 1 Card -->
+<div class="glass-panel p-md rounded-xl flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-title-md text-title-md text-primary">Parag Parikh Flexi Cap</h3>
+<p class="font-caption text-caption text-on-surface-variant">Growth • Direct Plan</p>
+</div>
+<div class="bg-primary-container/10 px-2 py-1 rounded-md border border-primary-container/20 text-primary font-label-mono text-label-mono">
+                                                ★ 5
+                                            </div>
+</div>
+<div class="grid grid-cols-2 gap-y-4 gap-x-2">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1">NAV</p>
+<p class="font-headline-md text-headline-md text-on-surface">₹74.52</p>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1">3Y Return</p>
+<p class="font-headline-md text-headline-md text-primary">+21.4%</p>
+</div>
+<div class="col-span-2">
+<p class="font-caption text-caption text-on-surface-variant mb-2">Top Sectors</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs">Financials (32%)</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs">Tech (18%)</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs">Cons (14%)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fund 2 Card -->
+<div class="glass-panel p-md rounded-xl flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-title-md text-title-md text-tertiary-container">HDFC Flexi Cap</h3>
+<p class="font-caption text-caption text-on-surface-variant">Growth • Direct Plan</p>
+</div>
+<div class="bg-tertiary-container/10 px-2 py-1 rounded-md border border-tertiary-container/20 text-tertiary-container font-label-mono text-label-mono">
+                                                ★ 4
+                                            </div>
+</div>
+<div class="grid grid-cols-2 gap-y-4 gap-x-2">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1">NAV</p>
+<p class="font-headline-md text-headline-md text-on-surface">₹1,642.10</p>
+</div>
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1">3Y Return</p>
+<p class="font-headline-md text-headline-md text-primary">+24.8%</p>
+</div>
+<div class="col-span-2">
+<p class="font-caption text-caption text-on-surface-variant mb-2">Top Sectors</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs">Financials (38%)</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs">Industrials (12%)</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-xs">IT (10%)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant mt-2">HDFC has shown slightly better 3-year returns, heavily favoring Indian financials. Parag Parikh offers more diversification with US tech exposure, though recent regulatory changes limit new foreign investments.</p>
+</div>
+<!-- Source Citation Badge -->
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-highest rounded-lg border border-white/5 self-start">
+<span class="material-symbols-outlined text-xs text-on-surface-variant">database</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Source: Mutual Fund • Refreshed 5 mins ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex justify-end w-full">
+<div class="max-w-[80%] md:max-w-[60%] flex flex-col items-end gap-2">
+<div class="card-level-2 px-lg py-md rounded-2xl rounded-tr-sm text-on-surface">
+                            What are the expense ratios for both?
+                        </div>
+</div>
+</div>
+<!-- Assistant Message (Typing Indicator) -->
+<div class="flex justify-start w-full">
+<div class="max-w-[95%] md:max-w-[80%] flex gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0 border border-primary-container/30 mt-2">
+<span class="material-symbols-outlined text-primary text-sm">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="card-level-1 px-lg py-md rounded-2xl rounded-tl-sm text-on-surface flex items-center gap-2 w-fit">
+<span class="w-2 h-2 bg-on-surface-variant rounded-full animate-bounce" style="animation-delay: 0s;"></span>
+<span class="w-2 h-2 bg-on-surface-variant rounded-full animate-bounce" style="animation-delay: 0.2s;"></span>
+<span class="w-2 h-2 bg-on-surface-variant rounded-full animate-bounce" style="animation-delay: 0.4s;"></span>
+<span class="font-label-mono text-label-mono text-on-surface-variant ml-2">Assistant is thinking...</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Input Area -->
+<div class="absolute bottom-0 w-full p-lg bg-gradient-to-t from-surface via-surface to-transparent pt-12">
+<div class="max-w-4xl mx-auto relative">
+<div class="glass-panel rounded-2xl flex flex-col focus-within:border-primary transition-colors duration-300 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+<textarea class="w-full bg-transparent border-none text-on-surface placeholder:text-on-surface-variant p-md focus:ring-0 resize-none min-h-[64px] max-h-[200px]" placeholder="Ask about funds, stocks, or market trends..."></textarea>
+<div class="flex items-center justify-between p-2 border-t border-white/5">
+<div class="flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-lg transition-colors" title="Attach Data Source">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-white/5 rounded-lg transition-colors" title="Market Search">
+<span class="material-symbols-outlined">troubleshoot</span>
+</button>
+</div>
+<button class="bg-primary-container text-black px-4 py-2 rounded-lg font-title-md text-title-md hover:bg-primary transition-colors flex items-center gap-2">
+<span>Send</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+<div class="text-center mt-2">
+<span class="font-caption text-caption text-on-surface-variant">Groww AI can make mistakes. Consider verifying important information.</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

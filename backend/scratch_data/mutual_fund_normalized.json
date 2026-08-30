@@ -1,0 +1,60 @@
+{
+  "fund_name": "HDFC Mid Cap Fund Direct Growth",
+  "nav": "237.124",
+  "nav_date": "24-Aug-2026",
+  "returns_1y": "10.72",
+  "returns_3y": "19.34",
+  "returns_5y": "21.33",
+  "expense_ratio": "0.74",
+  "exit_load": "Exit load of 1% if redeemed within 1 year.",
+  "risk_level": 5,
+  "fund_size_aum": "105142.6943",
+  "rating": "5",
+  "fund_manager": "Chirag Setalvad",
+  "category": "Equity",
+  "amc": "HDFC",
+  "top_holdings": [
+    {
+      "company": "Repo",
+      "percentage": 8.11
+    },
+    {
+      "company": "The Federal Bank Ltd",
+      "percentage": 4.18
+    },
+    {
+      "company": "Max Financial Services Ltd",
+      "percentage": 4.1
+    },
+    {
+      "company": "AU Small Finance Bank Ltd",
+      "percentage": 4.08
+    },
+    {
+      "company": "Balkrishna Industries Ltd",
+      "percentage": 3.1
+    },
+    {
+      "company": "Fortis Healthcare Ltd",
+      "percentage": 3.07
+    },
+    {
+      "company": "Ipca Laboratories Ltd",
+      "percentage": 3.05
+    },
+    {
+      "company": "Indian Bank",
+      "percentage": 2.98
+    },
+    {
+      "company": "Glenmark Pharmaceuticals Ltd",
+      "percentage": 2.93
+    },
+    {
+      "company": "Vishal Mega Mart Ltd.",
+      "percentage": 2.64
+    }
+  ],
+  "sector_allocation": [],
+  "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-opportunities-fund-direct-growth"
+}
