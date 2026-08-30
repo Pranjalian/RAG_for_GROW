@@ -49,7 +49,7 @@ class Settings(BaseSettings):
     ADMIN_DEFAULT_PASSWORD: str = "admin"
 
     # ── CORS ──────────────────────────────────────────────────────────
-    CORS_ORIGINS: str = "http://localhost:3000,http://localhost:5173"
+    CORS_ORIGINS: str = "http://localhost:3000,http://localhost:5173,https://frontend-pranjali3.vercel.app"
 
     @property
     def cors_origins_list(self) -> list[str]:
