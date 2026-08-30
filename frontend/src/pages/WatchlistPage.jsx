@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 export default function WatchlistPage() {
   const [watchlist, setWatchlist] = useState([]);
@@ -14,7 +15,7 @@ export default function WatchlistPage() {
           localStorage.setItem('groww_session_id', sessionId);
         }
         
-        const response = await axios.get(`http://localhost:8000/api/data/watchlist?session_id=${sessionId}`);
+        const response = await axios.get(`${API_BASE_URL}/api/data/watchlist?session_id=${sessionId}`);
         setWatchlist(response.data.watchlist || []);
         setError(null);
       } catch (err) {
@@ -31,7 +32,7 @@ export default function WatchlistPage() {
   const handleRemove = async (id) => {
     try {
       const sessionId = localStorage.getItem('groww_session_id');
-      await axios.delete(`http://localhost:8000/api/data/watchlist/${id}?session_id=${sessionId}`);
+      await axios.delete(`${API_BASE_URL}/api/data/watchlist/${id}?session_id=${sessionId}`);
       setWatchlist(prev => prev.filter(item => item.id !== id));
     } catch (err) {
       console.error("Error removing item:", err);

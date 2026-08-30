@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../../config';
 
 export default function AdminDashboard() {
   const [urls, setUrls] = useState([]);
@@ -20,7 +21,7 @@ export default function AdminDashboard() {
 
   const fetchUrls = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/admin/status', { headers: getHeaders() });
+      const res = await axios.get(`${API_BASE_URL}/api/admin/status`, { headers: getHeaders() });
       setUrls(res.data.per_source || []);
       setIsLoading(false);
     } catch (err) {
@@ -42,7 +43,7 @@ export default function AdminDashboard() {
     setError('');
     
     try {
-      await axios.post('http://localhost:8000/api/admin/urls', {
+      await axios.post(`${API_BASE_URL}/api/admin/urls`, {
         url: newUrl,
         source_type: sourceType,
         label: label || 'Custom Source'
@@ -60,7 +61,7 @@ export default function AdminDashboard() {
     if (!confirm('Are you sure you want to remove this source?')) return;
     
     try {
-      await axios.delete(`http://localhost:8000/api/admin/urls/${id}`, { headers: getHeaders() });
+      await axios.delete(`${API_BASE_URL}/api/admin/urls/${id}`, { headers: getHeaders() });
       fetchUrls();
     } catch (err) {
       setError(err.response?.data?.detail || 'Failed to delete URL.');
@@ -70,7 +71,7 @@ export default function AdminDashboard() {
   const handleSync = async () => {
     setSyncStatus('Syncing...');
     try {
-      const res = await axios.post('http://localhost:8000/api/admin/sync', {}, { headers: getHeaders() });
+      const res = await axios.post(`${API_BASE_URL}/api/admin/sync`, {}, { headers: getHeaders() });
       setSyncStatus(`Sync Complete: ${res.data.success} successful, ${res.data.failed} failed.`);
       fetchUrls(); // Refresh statuses
       setTimeout(() => setSyncStatus(''), 5000);

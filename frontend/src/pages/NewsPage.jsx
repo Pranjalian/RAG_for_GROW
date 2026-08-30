@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 export default function NewsPage() {
   const [newsList, setNewsList] = useState([]);
@@ -9,7 +10,7 @@ export default function NewsPage() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/data/news');
+        const response = await axios.get(`${API_BASE_URL}/api/data/news`);
         setNewsList(response.data.news || []);
         setError(null);
       } catch (err) {

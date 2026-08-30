@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 export default function NFOPage() {
   const [nfos, setNfos] = useState([]);
@@ -9,7 +10,7 @@ export default function NFOPage() {
   useEffect(() => {
     const fetchNFOs = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/data/nfo');
+        const response = await axios.get(`${API_BASE_URL}/api/data/nfo`);
         setNfos(response.data.nfos || []);
         setError(null);
       } catch (err) {

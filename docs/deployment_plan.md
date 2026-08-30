@@ -23,7 +23,7 @@ graph LR
     FE -- "WSS WebSocket" --> BE
     BE --> PG
     BE --> CHROMA
-    BE -- "GROK API" --> GROK["x.ai API"]
+    BE -- "LLM API" --> GROK["Groq API"]
 ```
 
 ---
@@ -71,16 +71,16 @@ In Railway → Backend service → **Variables** tab, add:
 
 ```env
 # ─── Database (override Railway's auto-provided URL) ───────────────
-DATABASE_URL=postgresql+asyncpg://<RAILWAY_PG_USER>:<RAILWAY_PG_PASSWORD>@<RAILWAY_PG_HOST>:<RAILWAY_PG_PORT>/<RAILWAY_PG_DB>
+DATABASE_URL=postgresql+asyncpg://${{Postgres.PGUSER}}:${{Postgres.PGPASSWORD}}@${{Postgres.PGHOST}}:${{Postgres.PGPORT}}/${{Postgres.PGDATABASE}}
 
 # ─── ChromaDB & Snapshots ──────────────────────────────────────────
 CHROMA_PERSIST_DIR=/app/data/chromadb
 SNAPSHOT_DIR=/app/data/snapshots
 
-# ─── GROK LLM ──────────────────────────────────────────────────────
-GROK_API_KEY=<your-grok-api-key>
-GROK_API_BASE_URL=https://api.x.ai/v1
-GROK_MODEL_NAME=grok-beta
+# ─── LLM (Groq) ────────────────────────────────────────────────────
+GROK_API_KEY=<your-groq-api-key>
+GROK_API_BASE_URL=https://api.groq.com/openai/v1
+GROK_MODEL_NAME=openai/gpt-oss-120b
 
 # ─── Embedding Model ───────────────────────────────────────────────
 EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 export function useNotifications() {
   const [notifications, setNotifications] = useState([]);
@@ -14,7 +15,7 @@ export function useNotifications() {
 
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/data/notifications?session_id=${sessionId}`);
+        const response = await axios.get(`${API_BASE_URL}/api/data/notifications?session_id=${sessionId}`);
         if (response.data && response.data.notifications) {
           setNotifications(response.data.notifications);
           setUnreadCount(response.data.notifications.length); // Just a simple unread count based on total returned

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { WS_BASE_URL } from '../config';
 
 
 export default function ChatPage() {
@@ -14,7 +15,7 @@ export default function ChatPage() {
 
   useEffect(() => {
     // Connect WebSocket
-    const wsUrl = `ws://localhost:8000/api/chat/ws?session_id=${sessionId}`;
+    const wsUrl = `${WS_BASE_URL}/api/chat/ws?session_id=${sessionId}`;
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
 
